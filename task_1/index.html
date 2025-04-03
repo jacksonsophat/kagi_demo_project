@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Recipes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .text-container {
+            position: relative;
+        }
+
+        .example-2>p {
+            margin-bottom: 0.25em;
+            margin-top: 0.25em;
+        }
+
+        .more-text {
+            display: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .show-less {
+            display: none;
+        }
+
+        p:nth-child(n+11) {
+            display: none;
+        }
+
+        #text-toggle:checked~p {
+            display: block;
+        }
+
+        #text-toggle:checked~.label-toggle .show-more {
+            display: none;
+        }
+
+        #text-toggle:checked~.label-toggle .show-less {
+            display: inline-block;
+        }
+
+        .label-toggle {
+            cursor: pointer;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Task 1</h1>
+    <section>
+        <h2>Example 1</h2>
+        <h3>Meat Lasagna Recipes</h3>
+        <form action="/">
+            <div>
+                <input type="checkbox" id="sausage" name="sausage" value="1 pound sweet Italian sausage">
+                <label for="sausage">1 pound sweet Italian sausage</label>
+            </div>
+            <div>
+                <input type="checkbox" id="beef" name="beef" value="3/4 pound lean ground beef">
+                <label for="beef">3/4 pound lean ground beef</label>
+            </div>
+            <div>
+                <input type="checkbox" id="onion" name="onion" value="1/2 cup minced onion">
+                <label for="onion">1/2 cup minced onion</label>
+            </div>
+            <div>
+                <input type="checkbox" id="garlic" name="garlic" value="2 cloves garlic, crushed">
+                <label for="garlic">2 cloves garlic, crushed</label>
+            </div>
+            <div>
+                <input type="checkbox" id="crushed_tomato" name="crushed_tomato" value="1 (28 ounce) cans tomato paste">
+                <label for="crushed_tomato">1 (28 ounce) can crushed tomato</label>
+            </div>
+            <div>
+                <input type="checkbox" id="tomato_paste" name="tomato_paste" value="1 (28 ounce) cans tomato paste">
+                <label for="tomato_paste">2 (6 ounce) cans tomato paste</label>
+            </div>
+            <div>
+                <input type="checkbox" id="tomato_sauce" name="tomato_sauce"
+                    value="2 (6.5 ounce) cans canned tomato sauce">
+                <label for="tomato_sauce">2 (6.5 ounce) cans canned tomato sauce</label>
+            </div>
+            <div>
+                <input type="checkbox" id="water" name="water" value="1/2 cup water">
+                <label for="water">1/2 cup water</label>
+            </div>
+            <div>
+                <input type="checkbox" id="sugar" name="sugar" value="2 tablespoons white sugar">
+                <label for="sugar">2 tablespoons white sugar</label>
+            </div>
+            <div>
+                <input type="checkbox" id="basil" name="basil" value="1 1/2 teaspoons dried basil leaves">
+                <label for="basil">1 1/2 teaspoons dried basil leaves</label>
+            </div>
+        </form>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section>
+        <h2>Example 2</h2>
+        <h3>Meat Lasagna Recipes</h3>
+
+        <div class="example-2">
+            <p>1 pound sweet Italian sausage</p>
+            <p>3/4 pound lean ground beef</p>
+            <p>1/2 cup minced onion</p>
+            <p>2 cloves garlic, crushed</p>
+            <p>1 (28 ounce) can crushed tomato</p>
+            <p>2 (6 ounce) cans tomato paste</p>
+            <p>2 (6.5 ounce) cans canned tomato sauce</p>
+            <p>1/2 cup water</p>
+            <p>2 tablespoons white sugar</p>
+            <p>1 1/2 teaspoons dried basil leaves</p>
+
+            <input type="checkbox" id="text-toggle" class="hidden">
+            <p>1/2 teaspoon fennel seeds</p>
+            <p>1 teaspoon Italian seasoning</p>
+            <p>1 1/2 teaspoons salt, divided, or to taste</p>
+            <p>1/4 teaspoon ground black pepper</p>
+            <p>4 tablespoons chopped fresh parsley</p>
+            <p>12 lasagna noodles</p>
+            <p>16 ounces ricotta cheese</p>
+            <p>1 egg</p>
+            <p>3/4 pound mozzarella cheese, sliced</p>
+            <p>3/4 cup grated Parmesan cheese</p>
+
+            <label for="text-toggle" class="label-toggle">
+                <span class="show-more">Show more</span>
+                <span class="show-less">Show less</span>
+            </label>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Optimization</title>
+</head>
+
+<body>
+
+    <script>
+        function court(yourName, judgesCount, otherNames) {
+            // Create name array
+            const nameArray = otherNames.split(' ');
+
+            let namesBefore = 0;
+            // Loop through the names before your name
+            for (let i = 0; i < nameArray.length; i++) {
+                // Compare names alphabetically and get the position of your name
+                if (nameArray[i] < yourName) namesBefore++;
+            }
+
+            return Math.ceil(namesBefore / judgesCount) * 30 + 30;
+        }
+
+        function runTime(iterations) {
+            const start = performance.now();
+
+            for (let i = 0; i < iterations; i++) {
+                court("Jules", 3, "Adam Betty Frank Mike");
+                court("Zane", 1, "Mark Hank Ana Vivian");
+            }
+
+            const end = performance.now();
+            console.log(`Run Time: ${end - start}ms for ${iterations} iterations`);
+        }
+
+        let Jules = court('Jules', 3, 'Adam Betty Frank Mike');
+        console.log('Jules: ', Jules);
+        let Zane = court('Zane', 1, 'Mark Hank Ana Vivian');
+        console.log('Zane: ', Zane);
+
+        // Iterate 1 million times
+        runTime(1000000);
+
+    </script>
+</body>
+
+</html>
