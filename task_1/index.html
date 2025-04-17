@@ -10,6 +10,20 @@
             font-family: Arial, sans-serif;
         }
 
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            height: fit-content;
+        }
+
         .text-container {
             position: relative;
         }
@@ -19,128 +33,212 @@
             margin-top: 0.25em;
         }
 
-        .more-text {
+        .example-2 .more-text {
             display: none;
         }
 
-        .hidden {
+        .example-2 .hidden {
             display: none;
         }
 
-        .show-less {
+        .example-2 .show-less {
             display: none;
         }
 
-        p:nth-child(n+11) {
+        .example-2 p:nth-child(n+11) {
             display: none;
         }
 
-        #text-toggle:checked~p {
+        .example-2 .text-toggle:checked~p {
             display: block;
         }
 
-        #text-toggle:checked~.label-toggle .show-more {
+        .example-2 .text-toggle:checked~.label-toggle .show-more {
             display: none;
         }
 
-        #text-toggle:checked~.label-toggle .show-less {
+        .example-2 .text-toggle:checked~.label-toggle .show-less {
             display: inline-block;
         }
 
         .label-toggle {
             cursor: pointer;
             display: block;
-            margin-top: 10px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .label-toggl>span {
+            text-align: center;
+        }
+
+
+        .example-3>p {
+            margin-bottom: 0.25em;
+            margin-top: 0.25em;
+        }
+
+        .example-3 .more-text {
+            display: none;
+        }
+
+        .example-3 .hidden {
+            display: none;
+        }
+
+        .example-3 .show-less {
+            display: none;
+        }
+
+        .example-3 p:nth-child(n+11) {
+            display: none;
+        }
+
+        .example-3 .text-toggle:checked~p {
+            display: block;
+        }
+
+        .example-3 .text-toggle:checked~.label-toggle .show-more {
+            display: none;
+        }
+
+        .example-3 .text-toggle:checked~.label-toggle .show-less {
+            display: inline-block;
+        }
+
+
+        @media only screen and (max-width: 1023px) {
+            .content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
     <h1>Task 1</h1>
-    <section>
-        <h2>Example 1</h2>
-        <h3>Meat Lasagna Recipes</h3>
-        <form action="/">
-            <div>
-                <input type="checkbox" id="sausage" name="sausage" value="1 pound sweet Italian sausage">
-                <label for="sausage">1 pound sweet Italian sausage</label>
-            </div>
-            <div>
-                <input type="checkbox" id="beef" name="beef" value="3/4 pound lean ground beef">
-                <label for="beef">3/4 pound lean ground beef</label>
-            </div>
-            <div>
-                <input type="checkbox" id="onion" name="onion" value="1/2 cup minced onion">
-                <label for="onion">1/2 cup minced onion</label>
-            </div>
-            <div>
-                <input type="checkbox" id="garlic" name="garlic" value="2 cloves garlic, crushed">
-                <label for="garlic">2 cloves garlic, crushed</label>
-            </div>
-            <div>
-                <input type="checkbox" id="crushed_tomato" name="crushed_tomato" value="1 (28 ounce) cans tomato paste">
-                <label for="crushed_tomato">1 (28 ounce) can crushed tomato</label>
-            </div>
-            <div>
-                <input type="checkbox" id="tomato_paste" name="tomato_paste" value="1 (28 ounce) cans tomato paste">
-                <label for="tomato_paste">2 (6 ounce) cans tomato paste</label>
-            </div>
-            <div>
-                <input type="checkbox" id="tomato_sauce" name="tomato_sauce"
-                    value="2 (6.5 ounce) cans canned tomato sauce">
-                <label for="tomato_sauce">2 (6.5 ounce) cans canned tomato sauce</label>
-            </div>
-            <div>
-                <input type="checkbox" id="water" name="water" value="1/2 cup water">
-                <label for="water">1/2 cup water</label>
-            </div>
-            <div>
-                <input type="checkbox" id="sugar" name="sugar" value="2 tablespoons white sugar">
-                <label for="sugar">2 tablespoons white sugar</label>
-            </div>
-            <div>
-                <input type="checkbox" id="basil" name="basil" value="1 1/2 teaspoons dried basil leaves">
-                <label for="basil">1 1/2 teaspoons dried basil leaves</label>
-            </div>
-        </form>
-    </section>
-    <br>
-    <br>
-    <br>
-    <section>
-        <h2>Example 2</h2>
-        <h3>Meat Lasagna Recipes</h3>
+    <div class="content">
+        <section>
+            <h2>Example 1</h2>
+            <h3>Meat Lasagna Recipes</h3>
+            <form action="/">
+                <div>
+                    <input type="checkbox" id="sausage" name="sausage" value="1 pound sweet Italian sausage">
+                    <label for="sausage">1 pound sweet Italian sausage</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="beef" name="beef" value="3/4 pound lean ground beef">
+                    <label for="beef">3/4 pound lean ground beef</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="onion" name="onion" value="1/2 cup minced onion">
+                    <label for="onion">1/2 cup minced onion</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="garlic" name="garlic" value="2 cloves garlic, crushed">
+                    <label for="garlic">2 cloves garlic, crushed</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="crushed_tomato" name="crushed_tomato"
+                        value="1 (28 ounce) cans tomato paste">
+                    <label for="crushed_tomato">1 (28 ounce) can crushed tomato</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tomato_paste" name="tomato_paste" value="1 (28 ounce) cans tomato paste">
+                    <label for="tomato_paste">2 (6 ounce) cans tomato paste</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="tomato_sauce" name="tomato_sauce"
+                        value="2 (6.5 ounce) cans canned tomato sauce">
+                    <label for="tomato_sauce">2 (6.5 ounce) cans canned tomato sauce</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="water" name="water" value="1/2 cup water">
+                    <label for="water">1/2 cup water</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="sugar" name="sugar" value="2 tablespoons white sugar">
+                    <label for="sugar">2 tablespoons white sugar</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="basil" name="basil" value="1 1/2 teaspoons dried basil leaves">
+                    <label for="basil">1 1/2 teaspoons dried basil leaves</label>
+                </div>
+            </form>
+        </section>
+        <section>
+            <h2>Example 2</h2>
+            <h3>Meat Lasagna Recipes</h3>
 
-        <div class="example-2">
-            <p>1 pound sweet Italian sausage</p>
-            <p>3/4 pound lean ground beef</p>
-            <p>1/2 cup minced onion</p>
-            <p>2 cloves garlic, crushed</p>
-            <p>1 (28 ounce) can crushed tomato</p>
-            <p>2 (6 ounce) cans tomato paste</p>
-            <p>2 (6.5 ounce) cans canned tomato sauce</p>
-            <p>1/2 cup water</p>
-            <p>2 tablespoons white sugar</p>
-            <p>1 1/2 teaspoons dried basil leaves</p>
+            <div class="example-2">
+                <p>1 pound sweet Italian sausage</p>
+                <p>3/4 pound lean ground beef</p>
+                <p>1/2 cup minced onion</p>
+                <p>2 cloves garlic, crushed</p>
+                <p>1 (28 ounce) can crushed tomato</p>
+                <p>2 (6 ounce) cans tomato paste</p>
+                <p>2 (6.5 ounce) cans canned tomato sauce</p>
+                <p>1/2 cup water</p>
+                <p>2 tablespoons white sugar</p>
+                <p>1 1/2 teaspoons dried basil leaves</p>
 
-            <input type="checkbox" id="text-toggle" class="hidden">
-            <p>1/2 teaspoon fennel seeds</p>
-            <p>1 teaspoon Italian seasoning</p>
-            <p>1 1/2 teaspoons salt, divided, or to taste</p>
-            <p>1/4 teaspoon ground black pepper</p>
-            <p>4 tablespoons chopped fresh parsley</p>
-            <p>12 lasagna noodles</p>
-            <p>16 ounces ricotta cheese</p>
-            <p>1 egg</p>
-            <p>3/4 pound mozzarella cheese, sliced</p>
-            <p>3/4 cup grated Parmesan cheese</p>
+                <input type="checkbox" id="text-toggle-2" class="hidden text-toggle">
+                <p>1/2 teaspoon fennel seeds</p>
+                <p>1 teaspoon Italian seasoning</p>
+                <p>1 1/2 teaspoons salt, divided, or to taste</p>
+                <p>1/4 teaspoon ground black pepper</p>
+                <p>4 tablespoons chopped fresh parsley</p>
+                <p>12 lasagna noodles</p>
+                <p>16 ounces ricotta cheese</p>
+                <p>1 egg</p>
+                <p>3/4 pound mozzarella cheese, sliced</p>
+                <p>3/4 cup grated Parmesan cheese</p>
+                <label for="text-toggle-2" class="label-toggle">
+                    <span class="show-more">Show more</span>
+                    <span class="show-less">Show less</span>
+                </label>
+            </div>
+        </section>
+        <section>
+            <h2>Example 3</h2>
+            <h3>Meat Lasagna Recipes</h3>
 
-            <label for="text-toggle" class="label-toggle">
-                <span class="show-more">Show more</span>
-                <span class="show-less">Show less</span>
-            </label>
-        </div>
-    </section>
+            <div class="example-3">
+                <p>1 pound sweet Italian sausage</p>
+                <p>3/4 pound lean ground beef</p>
+                <p>1/2 cup minced onion</p>
+                <p>2 cloves garlic, crushed</p>
+                <p>1 (28 ounce) can crushed tomato</p>
+                <p>2 (6 ounce) cans tomato paste</p>
+                <p>2 (6.5 ounce) cans canned tomato sauce</p>
+                <p>1/2 cup water</p>
+                <p>2 tablespoons white sugar</p>
+                <p>1 1/2 teaspoons dried basil leaves</p>
+
+                <input type="checkbox" checked id="text-toggle-3" class="hidden text-toggle">
+                <p>1/2 teaspoon fennel seeds</p>
+                <p>1 teaspoon Italian seasoning</p>
+                <p>1 1/2 teaspoons salt, divided, or to taste</p>
+                <p>1/4 teaspoon ground black pepper</p>
+                <p>4 tablespoons chopped fresh parsley</p>
+                <p>12 lasagna noodles</p>
+                <p>16 ounces ricotta cheese</p>
+                <p>1 egg</p>
+                <p>3/4 pound mozzarella cheese, sliced</p>
+                <p>3/4 cup grated Parmesan cheese</p>
+                <label for="text-toggle-3" class="label-toggle">
+                    <span class="show-more">Show more</span>
+                    <span class="show-less">Show less</span>
+                </label>
+            </div>
+        </section>
+    </div>
 </body>
 
 </html>
